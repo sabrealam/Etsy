@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, Text, VStack, HStack, Image } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 export default function CirculerContainer({ title, img }) {
   return (
-    <VStack >
+    <VStack>
       <Image
         _hover={{ transform: "scale(1.1)" }}
         transition={"1s"}
@@ -12,7 +13,7 @@ export default function CirculerContainer({ title, img }) {
         alt="Dan Abramov"
       />
 
-      <Text >{title}</Text>
+      <Link to={"/cato"} >{title}</Link>
     </VStack>
   );
 }

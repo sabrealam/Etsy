@@ -31,6 +31,7 @@ import { MdShoppingCart } from "react-icons/md";
 import { FaHourglassStart, FaRegCircle, FaRegHeart } from "react-icons/fa";
 import Btn from "./Btn";
 import Home from "./Pages/Home";
+import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <>
@@ -43,7 +44,13 @@ export default function Navbar() {
         pr={"70px"}
         fontSize={"40px"}
       >
-        <Text color={"tomato"}>Etsy</Text>
+        <Text
+          color={"tomato"}
+          onClick={() => location.reload()}
+          cursor={"pointer"}
+        >
+          Etsy
+        </Text>
         {/* <Spacer /> */}
         <Menu position={"relative"}>
           <MenuButton
@@ -88,8 +95,7 @@ export default function Navbar() {
         </Stack>
         <Spacer />
         <Button colorScheme="none" color={"black"} _hover={{ bg: "gray.300 " }}>
-          {" "}
-          Sign in{" "}
+          <Link to={"/login"}>Sign in</Link>
         </Button>
         <Spacer />
         <HStack spacing={8} cursor={"pointer"}>
