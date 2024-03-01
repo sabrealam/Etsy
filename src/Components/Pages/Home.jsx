@@ -1,5 +1,8 @@
 import React from "react";
 import {
+  InputGroup,
+  InputLeftElement,
+  Stack,
   HStack,
   Text,
   Center,
@@ -7,6 +10,12 @@ import {
   Box,
   Flex,
   Button,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Input,
 } from "@chakra-ui/react";
 import Btn from "../Btn";
 import GreenComponents from "../GreenComponents";
@@ -14,8 +23,11 @@ import Card from "../Card";
 import AllRoute from "../AllRoute/AllRoute";
 import Navbar from "../Navbar";
 import GiftCard from "../SubParts/GiftCard";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { ArrowForwardIcon, EmailIcon } from "@chakra-ui/icons";
 import DiscoverCard from "../SubParts/DiscoverCard";
+import { Link } from "react-router-dom";
+import { Link2 } from "lucide-react";
+import Footer from "../Footer";
 export default function Home() {
   return (
     <div>
@@ -152,14 +164,7 @@ export default function Home() {
           Shop from local makers
         </Button>
       </Flex>
-      <Flex
-        w={"90%"}
-        margin={"auto"}
-        mt={"20px"}
-        overflow={"auto"}
-        border={"1px solid black"}
-        gap={5}
-      >
+      <Flex w={"90%"} margin={"auto"} mt={"20px"} overflow={"auto"} gap={5}>
         <DiscoverCard
           title={"JasCreations"}
           img={
@@ -193,16 +198,17 @@ export default function Home() {
             "https://i.etsystatic.com/17321595/r/il/75bdc3/4769667837/il_570xN.4769667837_ia7r.jpg"
           }
         />
-        <DiscoverCard
-          title={"BatinHandiCrafts"}
-          img={
-            "https://i.etsystatic.com/18922075/r/il/a2f6fd/3007384323/il_340x270.3007384323_11i0.jpg"
-          }
-          img1={
-            "https://i.etsystatic.com/isla/f6085f/68906882/isla_75x75.68906882_gpd0p58x.jpg?version=0"
-          }
-        />
-        <DiscoverCard
+        {
+          <DiscoverCard
+            title={"BatinHandiCrafts"}
+            img={
+              "https://i.etsystatic.com/18922075/r/il/a2f6fd/3007384323/il_340x270.3007384323_11i0.jpg"
+            }
+            img1={
+              "https://i.etsystatic.com/isla/f6085f/68906882/isla_75x75.68906882_gpd0p58x.jpg?version=0"
+            }
+          />
+          /* <DiscoverCard
           title={"NinoshkaIndia"}
           img={
             "https://i.etsystatic.com/18954143/r/il/c1bccf/2243342703/il_570xN.2243342703_nln7.jpg"
@@ -219,10 +225,246 @@ export default function Home() {
           img1={
             "https://i.etsystatic.com/isla/c806bc/66661726/isla_75x75.66661726_ku88a0wc.jpg?version=0"
           }
-        />
+        /> */
+        }
       </Flex>
 
-      <Box h={"700px"} bg={"tomato"}></Box>
+      <Box minH={"780px"} h={"auto"} bg={"#fffbd8"} mt={"100px"} p={"50px"}>
+        <Text textAlign={"center"} fontSize={"40px"}>
+          What is Etsy India?
+        </Text>
+        <Link to={"/story"}>
+          <Text textAlign={"center"} textDecoration={"underline"}>
+            Read our wonderfully weird story
+          </Text>
+        </Link>
+        <Center
+          // border={"1px solid black"}
+          minH={"500px"}
+          h={"auto"}
+          w={"70%"}
+          m={"auto"}
+          mt={"60px"}
+        >
+          <Accordion w={"100%"}>
+            <AccordionItem>
+              <h2>
+                <AccordionButton w={"100%"}>
+                  <Box as="span" flex="1" textAlign="left">
+                    <Text color={"blue"} fontSize={"20px"}>
+                      Why choose Etsy?
+                    </Text>
+                    <Text mt={"10px"} fontWeight={"600"}>
+                      {" "}
+                      A community doing good...{" "}
+                    </Text>
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                Etsy is where people come together to make, sell, buy, and
+                collect unique items. We’re also a community pushing for
+                positive change for small businesses, people, and the planet.
+                Here are some of the ways we’re making a positive impact,
+                together:
+                <br />
+                <br />
+                Your purchases on Etsy in 2021 generated nearly $4 billion in
+                income for small businesses. <br />
+                <br /> We advocate for policy—at the global and local level—that
+                benefits creative entrepreneurs and helps small businesses grow
+                and thrive. <br />
+                <br /> We are deepening our commitment to a sustainable future
+                and are working towards a new goal to reach net zero emissions
+                by 2030. <br />
+                <br />
+                <Text mt={"10px"} fontWeight={"600"}>
+                  {" "}
+                  Support independent creators{" "}
+                </Text>
+                Support independent creators There’s no Etsy warehouse—just
+                millions of people selling the things they love. We make the
+                whole process easy, helping you connect directly with talented
+                artisans from across the world (including India) to find
+                something extraordinary.
+                <Text mt={"10px"} fontWeight={"600"}>
+                  {" "}
+                  Peace of mind{" "}
+                </Text>
+                Peace of mind With Etsy Purchase Protection, you can shop
+                confidently, knowing if something goes wrong with your order,
+                we’ve got your back for all eligible purchases. If you ever need
+                assistance, we are always ready to step in for support.
+              </AccordionPanel>
+            </AccordionItem>
+            <AccordionItem>
+              <h2>
+                <AccordionButton w={"100%"}>
+                  <Box as="span" flex="1" textAlign="left">
+                    <Text color={"blue"} fontSize={"20px"}>
+                      What can you shop on Etsy?
+                    </Text>
+                    <Text mt={"10px"} fontWeight={"600"}>
+                      {" "}
+                      A community doing good...{" "}
+                    </Text>
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                The imagination of Etsy sellers can run far and wide, which
+                makes our platform a home to more than 100 million active
+                listings across home, style, and gifts. Some of our popular
+                categories include:
+                <br />
+                <br />
+                <Text mt={"10px"} fontWeight={"600"}>
+                  {" "}
+                  Home & Living:
+                </Text>
+                <Text>
+                  Whether you’re setting up a new apartment or making small
+                  upgrades for a home refresh, you’ll find everything you need
+                  to make your home a reflection of your personality on Etsy.
+                  From traditional elements like Jaipuri bedding, masala boxes,
+                  and Madhubani paintings to modern essentials like sleek table
+                  lamps, vibrant indoor planters, and decorative platters, Etsy
+                  sellers have much to offer.
+                </Text>
+                <Text mt={"10px"} fontWeight={"600"}>
+                  {" "}
+                  Clothing:
+                </Text>
+                <Text>
+                  Your unique fashion style deserves outfits that can match it.
+                  Discover tie-dye kaftans, linen shirts, hand-painted sarees,
+                  chikankari kurtis, ajrakh scarves and so much more—from small
+                  sellers who understand your aesthetic just as much as your
+                  comfort.
+                </Text>
+                <Text mt={"10px"} fontWeight={"600"}>
+                  {" "}
+                  Accessories:
+                </Text>
+                <Text>
+                  The gajra for your friend’s haldi ceremony or the gemstone
+                  ring that represents your zodiac—sometimes, the little things
+                  can make the biggest impact. Etsy has it all and more! Explore
+                  a range of beautiful fashion accessories and jewellery for all
+                  the occasions you have planned.
+                </Text>
+                <Text mt={"10px"} fontWeight={"600"}>
+                  {" "}
+                  Gifts:
+                </Text>
+                <Text>
+                  From birthdays and anniversaries to festivals and weddings,
+                  we’ve got all the special moments in life covered. You’ll
+                  easily find the perfect presents that not only match the
+                  unique personalities of your loved ones perfectly but also
+                  make them feel seen and cherished.
+                </Text>
+              </AccordionPanel>
+            </AccordionItem>
+            <AccordionItem>
+              <h2>
+                <AccordionButton w={"100%"}>
+                  <Box as="span" flex="1" textAlign="left">
+                    <Text color={"blue"} fontSize={"20px"}>
+                      How to buy on Etsy?
+                    </Text>
+                    <Text mt={"10px"} fontWeight={"600"}>
+                      {" "}
+                      A community doing good...{" "}
+                    </Text>
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                <Text>
+                  If you’re looking for something specific, start by putting in
+                  the keywords in our search and then using filters to narrow
+                  down the results. You can even message the sellers with any
+                  questions or requests you may have before placing an order
+                  with them.
+                  <br />
+                  <br />
+                  If you’re looking for inspiration, head on over to our
+                  Editor’s Picks or look out for the latest updates on our
+                  Journal to discover extraordinary items.
+                </Text>
+              </AccordionPanel>
+            </AccordionItem>
+            <AccordionItem>
+              <h2>
+                <AccordionButton w={"100%"}>
+                  <Box as="span" flex="1" textAlign="left">
+                    <Text color={"blue"} fontSize={"20px"}>
+                      How to sell on Etsy?
+                    </Text>
+                    <Text mt={"10px"} fontWeight={"600"}>
+                      {" "}
+                      A community doing good...{" "}
+                    </Text>
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                <Text>
+                  You can sell handmade goods, vintage items, and craft supplies
+                  on Etsy. With low fees, powerful tools, and support and
+                  education, we help creative entrepreneurs start, manage, and
+                  scale their businesses. Want to open a shop? All it takes is
+                  Rs. 16* to start selling on Etsy.
+                  <br />
+                  <br />
+                  *Listing fees are billed for 0.20 USD, so if your bank's
+                  currency is not USD, the amount in your currency may vary
+                  based on changes in the exchange rate.
+                </Text>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
+        </Center>
+      </Box>
+      <Box bg={"#fffbd8"} h={"150px"}>
+        <Text textAlign={"center"} fontSize={"25px"} fontWeight={"600"}>
+          Have a question? Well, we’ve got some answers.
+        </Text>
+        <Box display={"flex"} justifyContent={"center"} mt={"20px"}>
+          <Button>Go to Help Centre &emsp; {<Link2 />}</Button>
+        </Box>
+      </Box>
+      <Box w={"100%"} h={"150px"} bg={"#ccebff"} p={"20px"}>
+        <Text textAlign={"center"} fontSize={"20px"}>
+          Yes! Send me exclusive offers, unique gift ideas, and personalised
+          tips for shopping and selling on Etsy.
+        </Text>
+        <Stack
+          m={"auto"}
+          w={"500px"}
+          display={"flex"}
+          flexDirection={"row"}
+          bg={"white"}
+          borderRadius={"10px"}
+          p={"10px"}
+          mt={"15px"}
+        >
+          <InputGroup>
+            <InputLeftElement pointerEvents="none">
+              <EmailIcon color="gray.300" />
+            </InputLeftElement>
+            <Input type="tel" size="md" placeholder="Enter Your Email" />
+          </InputGroup>
+          <Button w={"150px"}>SubsCribe</Button>
+        </Stack>
+      </Box>
+
+      <Footer />
     </div>
   );
 }
